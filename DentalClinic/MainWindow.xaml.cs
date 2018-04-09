@@ -23,6 +23,7 @@ namespace DentalClinic
         public MainWindow()
         {
             InitializeComponent();
+            // nasin commited
         }
     }
 }
