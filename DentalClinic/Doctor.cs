@@ -15,6 +15,10 @@ namespace DentalClinic
 
         public Doctor()
         {
+            this.firstName = null;
+            this.lastName = null;
+            this.emailAddress = null;
+            this.phoneNumber = 0;
         }
 
         public Doctor(string firstName, string lastName, string emailAddress, uint phoneNumber)
@@ -29,5 +33,10 @@ namespace DentalClinic
         public string LastName { get => lastName; set => lastName = value; }
         public string EmailAddress { get => emailAddress; set => emailAddress = value; }
         public uint PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+
+        public override string ToString()
+        {
+            return "Doctor: " + firstName+" " + lastName;
+        }
     }
 }

@@ -45,5 +45,10 @@ namespace DentalClinic
         public string Occupation { get => occupation; set => occupation = value; }
         internal MedicalHistory MedicalHistory { get => medicalHistory; set => medicalHistory = value; }
         internal InsuranceDetail InsuranceDetail { get => insuranceDetail; set => insuranceDetail = value; }
+
+        public override string ToString()
+        {
+            return "Patient: "+FirstName +" "+ LastName;
+        }
     }
 }
