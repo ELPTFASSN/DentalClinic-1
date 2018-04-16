@@ -8,7 +8,7 @@ namespace DentalClinic
 {
     enum HealthCardCompany
     {
-        OHIP, BLueCross, SunLife, FlexCare
+        OHIP, BLueCross, ManuLife, FlexCare
     }
     class InsuranceDetail
     {
