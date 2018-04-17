@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DentalClinic
 {
-    interface User
+    interface User:IComparable<User>
     {
         string FirstName { get; set; }
         string LastName { get; set; }
