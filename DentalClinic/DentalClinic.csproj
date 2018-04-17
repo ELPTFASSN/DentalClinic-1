@@ -63,6 +63,7 @@
     <Compile Include="InsuranceDetail.cs" />
     <Compile Include="MedicalHistory.cs" />
     <Compile Include="Paitent.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="User.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

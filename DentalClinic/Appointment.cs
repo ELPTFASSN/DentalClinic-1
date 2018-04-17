@@ -25,9 +25,9 @@ namespace DentalClinic
 
         public Appointment()
         {
-            this.paitent = null;
+            this.paitent = new Paitent();
             this.time = null;
-            this.doctor = null;
+            this.doctor = new Doctor();
             this.date = null;
             this.problem = null;
         }
