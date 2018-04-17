@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DentalClinic
 {
-    class Appointment
+    class Appointment:IComparable<Appointment>
     {
         Paitent paitent;
         string time;
@@ -41,6 +41,11 @@ namespace DentalClinic
         public override string ToString()
         {
             return "Appointments" + paitent +" "+ doctor;
+        }
+
+        public int CompareTo(Appointment other)
+        {
+            return this.Time.CompareTo(other.Time);
         }
     }
 }
