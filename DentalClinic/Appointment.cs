@@ -25,9 +25,9 @@ namespace DentalClinic
 
         public Appointment()
         {
-            this.paitent = new Paitent(); ;
+            this.paitent = new Paitent();
             this.time = null;
-            this.doctor = new Doctor(); ;
+            this.doctor = new Doctor();
             this.date = null;
             this.problem = null;
         }
@@ -47,7 +47,5 @@ namespace DentalClinic
         {
             return this.Time.CompareTo(other.Time);
         }
-
-       
     }
 }
