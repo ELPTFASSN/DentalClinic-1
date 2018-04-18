@@ -36,10 +36,10 @@ namespace DentalClinic
             appList.Add(appointment1);
             appList.Add(appointment2);
 
-            //foreach(Appointment app in appList)
-            //{
+            foreach (Appointment app in appList)
+            {
 
-            //}
+            }
         }
     }
 }

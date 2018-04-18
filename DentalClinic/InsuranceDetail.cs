@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DentalClinic
 {
-    enum HealthCardCompany
+    public enum HealthCardCompany
     {
         OHIP, BLueCross, ManuLife, FlexCare
     }
