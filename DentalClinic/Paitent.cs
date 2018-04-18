@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DentalClinic
 {
-    class Paitent : User
+   public class Paitent : User
     {
         string firstName;
         string lastName;

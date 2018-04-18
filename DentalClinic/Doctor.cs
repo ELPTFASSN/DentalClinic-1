@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DentalClinic
 {
-    class Doctor : User
+    public class Doctor : User
     {
         string firstName;
         string lastName;

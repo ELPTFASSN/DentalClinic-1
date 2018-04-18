@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DentalClinic
 {
-    class Appointment:IComparable<Appointment>
+    public class Appointment:IComparable<Appointment>
     {
         Paitent paitent;
         string time;

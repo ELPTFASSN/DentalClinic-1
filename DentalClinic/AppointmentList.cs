@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DentalClinic
 {
-    class AppointmentList
+    public class AppointmentList
     {
         List<Appointment> appointmentList = null;
         public AppointmentList()

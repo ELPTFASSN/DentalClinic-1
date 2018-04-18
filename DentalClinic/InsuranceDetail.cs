@@ -10,7 +10,7 @@ namespace DentalClinic
     {
         OHIP, BLueCross, ManuLife, FlexCare
     }
-    class InsuranceDetail
+    public class InsuranceDetail
     {
         string healthCardNumber;
         string fullName;

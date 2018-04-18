@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DentalClinic
 {
-    class MedicalHistory
+   public class MedicalHistory
     {
         string allergies;
         string heartDisease;
