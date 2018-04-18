@@ -16,11 +16,11 @@ namespace DentalClinic
 
         public Appointment(Paitent paitent, string time, Doctor doctor, string date, string problem)
         {
-            this.paitent = paitent;
-            this.time = time;
-            this.doctor = doctor;
-            this.date = date;
-            this.problem = problem;
+            this.Paitent = paitent;
+            this.Time = time;
+            this.Doctor = doctor;
+            this.Date = date;
+            this.Problem = problem;
         }
 
         public Appointment()
@@ -40,7 +40,7 @@ namespace DentalClinic
 
         public override string ToString()
         {
-            return "Appointments" + paitent +" "+ doctor;
+            return "Appointments " + paitent.ToString() +" "+ doctor.ToString();
         }
 
         public int CompareTo(Appointment other)

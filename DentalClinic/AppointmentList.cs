@@ -31,14 +31,14 @@ namespace DentalClinic
             appointmentList.Remove(appointment);
         }
 
-        public IEnumerator<AppointmentList> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return (IEnumerator)GetEnumerator();
+        }
+
+        public AppointmentEnum GetEnumerator()
+        {
+            return new AppointmentEnum(appointmentList);
         }
 
         public int Count
@@ -46,28 +46,25 @@ namespace DentalClinic
             get { return appointmentList.Count; } 
         }
 
-
-
-
     }
 
     public class AppointmentEnum : IEnumerator
     {
-        public AppointmentList[] _appList;
+        public List<Appointment> _appList;
 
         // Enumerators are positioned before the first element
         // until the first MoveNext() call.
         int position = -1;
 
-        public PeopleEnum(Person[] list)
+        public AppointmentEnum(List<Appointment> list)
         {
-            _people = list;
+            _appList = list;
         }
 
         public bool MoveNext()
         {
             position++;
-            return (position < _people.Length);
+            return (position < _appList.Count);
         }
 
         public void Reset()
@@ -83,13 +80,13 @@ namespace DentalClinic
             }
         }
 
-        public Person Current
+        public Appointment Current
         {
             get
             {
                 try
                 {
-                    return _people[position];
+                    return _appList[position];
                 }
                 catch (IndexOutOfRangeException)
                 {

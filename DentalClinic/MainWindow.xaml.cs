@@ -23,6 +23,12 @@ namespace DentalClinic
         public MainWindow()
         {
             InitializeComponent();
+            Program p = new Program();
+            AppointmentList li = p.Go();
+            foreach(Appointment app in li)
+            {
+                Label1.Content = app.ToString();
+            }
         }
     }
 }

@@ -36,7 +36,7 @@ namespace DentalClinic
 
         public override string ToString()
         {
-            return "Doctor: " + firstName+" " + lastName;
+            return "Doctor: " + this.FirstName + " " + this.LastName;
         }
     }
 }
