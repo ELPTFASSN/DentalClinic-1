@@ -6,7 +6,5 @@
         xmlns:local="clr-namespace:DentalClinic"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <TextBlock HorizontalAlignment="Left" Name="TextBlock1" Margin="80,61,0,0" TextWrapping="WrapWithOverflow" Text="" VerticalAlignment="Top" Height="191" Width="365"/>
-    </Grid>
+    <Grid/>
 </Window>
