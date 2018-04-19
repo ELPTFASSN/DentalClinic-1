@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DentalClinic"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="445.683" Width="839.748">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Name="TextBlock1" Margin="80,61,0,0" TextWrapping="WrapWithOverflow" Text="" VerticalAlignment="Top" Height="191" Width="365"/>
+        <!--<Label Content="Label" Name="Label1" HorizontalAlignment="Left" Margin="189,64,0,0" VerticalAlignment="Top" Height="203" Width="246"/>-->
+        <StackPanel>
+            <Button Content="Demo Page" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btnClickDemoPage"/>
+            <Button Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btnHome"/>
+        </StackPanel>
+        <Frame x:Name="MainFrame" Margin="0,30,0,0
+               "/>
+        <DataGrid HorizontalAlignment="Center" Height="396" Margin="85,10,0,0" VerticalAlignment="Top" Width="725" 
+                  ItemsSource="{Binding Path= Appointment, Mode=OneWay}"
+                  CanUserAddRows="False"
+                  CanUserSortColumns="False"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date,Mode=OneWay}" Width="*"/>
+                <DataGridTextColumn Header="Time" Binding="{Binding Time,Mode=OneWay}" Width="*"/>
+                <DataGridTextColumn Header="Paitent" Binding="{Binding Paitent,Mode=OneWay}" Width="*"/>
+                <DataGridTextColumn Header="Doctor" Binding="{Binding Doctor,Mode=OneWay}" Width="*"/>
+                <DataGridTextColumn Header="Problem" Binding="{Binding Problem,Mode=OneWay}" Width="*"/>
+               
+            </DataGrid.Columns>
+
+        </DataGrid>
     </Grid>
 </Window>
