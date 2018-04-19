@@ -49,20 +49,20 @@ namespace DentalClinic
         {
             return this.Time.CompareTo(other.Time);
         }
+    }
 
-        public class DataGridAppointment
-        {
-            string paitent;
-            string doctor;
-            string time;
-            string date;
-            string problem;
+    public class DataGridAppointment
+    {
+        string paitent;
+        string doctor;
+        string time;
+        string date;
+        string problem;
 
-            public string Paitent { get => paitent; set => paitent = value; }
-            public string Doctor { get => doctor; set => doctor = value; }
-            public string Time { get => time; set => time = value; }
-            public string Date { get => date; set => date = value; }
-            public string Problem { get => problem; set => problem = value; }
-        }
+        public string Paitent { get => paitent; set => paitent = value; }
+        public string Doctor { get => doctor; set => doctor = value; }
+        public string Time { get => time; set => time = value; }
+        public string Date { get => date; set => date = value; }
+        public string Problem { get => problem; set => problem = value; }
     }
 }

@@ -68,11 +68,16 @@ namespace DentalClinic
 
         private void buttonDisplay_Click(object sender, RoutedEventArgs e)
         {
+            List<DataGridAppointment> dataGrids = new List<DataGridAppointment>();
             AppointmentList li = ReadXML();
             foreach(Appointment ap in li)
             {
-                
+                DataGridAppointment dg = new DataGridAppointment();
+                dg.Paitent = ap.Paitent.FirstName + " " + ap.Paitent.LastName;
+                dataGrids.Add(dg);
             }
+
+            dataGrid1.ItemsSource = dataGrids;
         }
     }
 }

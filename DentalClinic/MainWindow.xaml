@@ -11,19 +11,12 @@
         <StackPanel/>
         <Frame x:Name="MainFrame" Margin="0,30,0,0
                "/>
-        <DataGrid HorizontalAlignment="Center" Height="396" Margin="85,10,0,0" VerticalAlignment="Top" Width="725" 
-                  ItemsSource="{Binding Path= Appointment, Mode=OneWay}"
+        <DataGrid x:Name="dataGrid1" HorizontalAlignment="Center" Height="396" Margin="85,10,0,0" VerticalAlignment="Top" Width="725" 
+                  
                   CanUserAddRows="False"
                   CanUserSortColumns="False"
                   >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Date" Binding="{Binding Date,Mode=OneWay}" Width="*"/>
-                <DataGridTextColumn Header="Time" Binding="{Binding Time,Mode=OneWay}" Width="*"/>
-                <DataGridTextColumn Header="Paitent" Binding="{Binding Paitent,Mode=OneWay}" Width="*"/>
-                <DataGridTextColumn Header="Doctor" Binding="{Binding Doctor,Mode=OneWay}" Width="*"/>
-                <DataGridTextColumn Header="Problem" Binding="{Binding Problem,Mode=OneWay}" Width="*"/>
-               
-            </DataGrid.Columns>
+            
 
         </DataGrid>
         <Button x:Name="buttonDisplay" Content="Display" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="75" Click="buttonDisplay_Click"/>
