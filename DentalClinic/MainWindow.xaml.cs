@@ -65,7 +65,7 @@ namespace DentalClinic
             return appList;
 
         }
-
+        
         private void buttonDisplay_Click(object sender, RoutedEventArgs e)
         {
             List<DataGridAppointment> dataGrids = new List<DataGridAppointment>();
@@ -75,10 +75,16 @@ namespace DentalClinic
             {
                 DataGridAppointment dg = new DataGridAppointment();
                 dg.Paitent = ap.Paitent.FirstName + " " + ap.Paitent.LastName;
+                
+                dg.Doctor = ap.Doctor.FirstName + " " + ap.Doctor.LastName;
+                dg.Date = ap.Date;
+                dg.Time = ap.Time;
+                dg.Problem = ap.Problem;
+
                 dataGrids.Add(dg);
             }
 
-            dataGrid1.ItemsSource = dataGrids;
+            
         }
     }
 }
