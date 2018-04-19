@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace DentalClinic
@@ -41,25 +42,37 @@ namespace DentalClinic
             
         }
 
-
-        //private void btnHome(object sender, RoutedEventArgs e)
-        //{
-        //    MainFrame.Content = new MainWindow();
-        //}
-
-
-        // just an FYI have set the path for the data grid of appointment class,
-
-        //public AppointmentList appointmentList1 = new AppointmentList();
-
-         /*{put parameters as required}*/ /*Appointment appointment1 = new Appointment();*/
-
-         
+        private AppointmentList ReadXML()
+        {
+            AppointmentList appList = null;
+            //XML Deserialization,reading the xml file saved on disk and putting it in c# object which is later set to datagrid
+            try
+            {
 
 
+                using (var reader = XmlReader.Create(@"Appointments.xml"))
+                {
+                    XmlSerializer deserializer = new XmlSerializer(typeof(AppointmentList));
+                    appList = (AppointmentList)deserializer.Deserialize(reader);
+                }
 
-       
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error in reading file");
+            }
 
+            return appList;
 
+        }
+
+        private void buttonDisplay_Click(object sender, RoutedEventArgs e)
+        {
+            AppointmentList li = ReadXML();
+            foreach(Appointment ap in li)
+            {
+                
+            }
+        }
     }
 }
