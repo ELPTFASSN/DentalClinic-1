@@ -49,5 +49,14 @@ namespace DentalClinic
         {
             return this.Time.CompareTo(other.Time);
         }
+
+        public class DataGridAppointment
+        {
+            string paitent;
+            string doctor;
+            string time;
+            string date;
+            string problem; 
+        }
     }
 }
