@@ -24,7 +24,6 @@ namespace DentalClinic
     {
         public MainWindow()
         {
-            InitializeComponent();
             Program p = new Program();
             AppointmentList li = p.Go();
             try
@@ -37,7 +36,7 @@ namespace DentalClinic
             }
             catch (Exception e)
             {
-                Label1.Content = app.ToString();
+                MessageBox.Show("Error in writing to XML file");
             }
             
         }
