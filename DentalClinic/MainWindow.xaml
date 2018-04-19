@@ -7,7 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Label Content="Label" Name="Label1" HorizontalAlignment="Left" Margin="189,64,0,0" VerticalAlignment="Top" Height="203" Width="246"/>
+        <!--<Label Content="Label" Name="Label1" HorizontalAlignment="Left" Margin="189,64,0,0" VerticalAlignment="Top" Height="203" Width="246"/>-->
+        <StackPanel>
+            <Button Content="Demo Page" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btnClickDemoPage"/>
+            <Button Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="btnHome"/>
+        </StackPanel>
+        <Frame x:Name="MainFrame" Margin="0,30,0,0
+               "/>
+        
 
     </Grid>
 </Window>

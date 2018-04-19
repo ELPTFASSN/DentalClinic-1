@@ -27,8 +27,19 @@ namespace DentalClinic
             AppointmentList li = p.Go();
             foreach(Appointment app in li)
             {
-                Label1.Content = app.ToString();
+                //Label1.Content = app.ToString();
             }
         }
+
+        private void btnClickDemoPage(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new DemoPage1();
+        }
+
+       
+        //private void btnHome(object sender, RoutedEventArgs e)
+        //{
+        //    MainFrame.Content = new MainWindow();
+        //}
     }
 }

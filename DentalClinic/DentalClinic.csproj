@@ -59,12 +59,19 @@
     </ApplicationDefinition>
     <Compile Include="Appointment.cs" />
     <Compile Include="AppointmentList.cs" />
+    <Compile Include="DemoPage1.xaml.cs">
+      <DependentUpon>DemoPage1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Doctor.cs" />
     <Compile Include="InsuranceDetail.cs" />
     <Compile Include="MedicalHistory.cs" />
     <Compile Include="Paitent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="User.cs" />
+    <Page Include="DemoPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
