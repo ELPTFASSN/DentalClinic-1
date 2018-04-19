@@ -40,5 +40,26 @@ namespace DentalClinic
             }
             
         }
+
+
+        //private void btnHome(object sender, RoutedEventArgs e)
+        //{
+        //    MainFrame.Content = new MainWindow();
+        //}
+
+
+        // just an FYI have set the path for the data grid of appointment class,
+
+        //public AppointmentList appointmentList1 = new AppointmentList();
+
+         /*{put parameters as required}*/ /*Appointment appointment1 = new Appointment();*/
+
+         
+
+
+
+       
+
+
     }
 }
