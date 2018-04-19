@@ -69,6 +69,7 @@ namespace DentalClinic
         private void buttonDisplay_Click(object sender, RoutedEventArgs e)
         {
             AppointmentList li = ReadXML();
+            
             foreach(Appointment ap in li)
             {
                 
