@@ -29,13 +29,12 @@ namespace DentalClinic
             Paitent paitent2 = new Paitent("John", "Doe'", "aa@aa.com", 567890, "nothin", medicalHistory2, insuranceDetail2
                 );
             Doctor doctor2 = new Doctor("Doctor", "dsfdsfds", "343@dfds.com", 324455);
-            Appointment appointment2 = new Appointment(paitent2, "22:10", doctor2, "23/10/1992", "dsfsdfdsfsd");
+            Appointment appointment2 = new Appointment(paitent2, "08:10", doctor2, "23/10/1992", "dsfsdfdsfsd");
 
             AppointmentList appList = new AppointmentList();
             appList.Add(appointment);
             appList.Add(appointment1);
             appList.Add(appointment2);
-
             return appList;
             
         }

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DentalClinic
 {
-   public class Paitent : User
+    [XmlRoot("Paitent")]
+    [Serializable]
+    public class Paitent : User
     {
         string firstName;
         string lastName;
@@ -43,8 +46,8 @@ namespace DentalClinic
         public string EmailAddress { get => emailAddress; set => emailAddress = value; }
         public uint PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string Occupation { get => occupation; set => occupation = value; }
-        internal MedicalHistory MedicalHistory { get => medicalHistory; set => medicalHistory = value; }
-        internal InsuranceDetail InsuranceDetail { get => insuranceDetail; set => insuranceDetail = value; }
+        public MedicalHistory MedicalHistory { get => medicalHistory; set => medicalHistory = value; }
+        public InsuranceDetail InsuranceDetail { get => insuranceDetail; set => insuranceDetail = value; }
 
         public override string ToString()
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DentalClinic
 {
@@ -35,12 +36,13 @@ namespace DentalClinic
         public string Time { get => time; set => time = value; }
         public string Date { get => date; set => date = value; }
         public string Problem { get => problem; set => problem = value; }
-        internal Paitent Paitent { get => paitent; set => paitent = value; }
-        internal Doctor Doctor { get => doctor; set => doctor = value; }
+        
+        public Paitent Paitent { get => paitent; set => paitent = value; }
+        public Doctor Doctor { get => doctor; set => doctor = value; }
 
         public override string ToString()
         {
-            return "Appointments " + paitent.ToString() +" "+ doctor.ToString();
+            return " Appointment: " + paitent.ToString() +" with "+ doctor.ToString() + " at " + time + " - " + date;
         }
 
         public int CompareTo(Appointment other)

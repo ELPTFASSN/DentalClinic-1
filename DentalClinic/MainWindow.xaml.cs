@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace DentalClinic
 {
@@ -25,10 +27,19 @@ namespace DentalClinic
             InitializeComponent();
             Program p = new Program();
             AppointmentList li = p.Go();
-            foreach(Appointment app in li)
+            try
             {
-                Label1.Content = app.ToString();
+                //XML serialization,converting c# object to XML and saving it in a file
+                XmlSerializer serializer = new XmlSerializer(typeof(AppointmentList));
+                TextWriter writer = new StreamWriter("Appointments.xml");
+                serializer.Serialize(writer, li);
+                writer.Close();
             }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error in writing to XML file");
+            }
+            
         }
     }
 }

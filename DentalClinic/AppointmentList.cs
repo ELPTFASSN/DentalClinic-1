@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DentalClinic
 {
+    [XmlRoot("AppointmentList")]
     public class AppointmentList : IEnumerable
     {
-        List<Appointment> appointmentList = null;
+        [XmlArray("Appointments")]
+        [XmlArrayItem("Appointment")]
+        public ObservableCollection<Appointment> appointmentList = null;
         public AppointmentList()
         {
-            appointmentList = new List<Appointment>();
+            appointmentList = new ObservableCollection<Appointment>();
         }
 
         public Appointment this[int i]
@@ -50,13 +55,13 @@ namespace DentalClinic
 
     public class AppointmentEnum : IEnumerator
     {
-        public List<Appointment> _appList;
+        public ObservableCollection<Appointment> _appList;
 
         // Enumerators are positioned before the first element
         // until the first MoveNext() call.
         int position = -1;
 
-        public AppointmentEnum(List<Appointment> list)
+        public AppointmentEnum(ObservableCollection<Appointment> list)
         {
             _appList = list;
         }
