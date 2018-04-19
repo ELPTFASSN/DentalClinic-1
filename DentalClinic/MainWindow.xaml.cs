@@ -37,7 +37,7 @@ namespace DentalClinic
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error in writing to XML file");
+                Label1.Content = app.ToString();
             }
             
         }
