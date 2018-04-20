@@ -59,12 +59,40 @@
     </ApplicationDefinition>
     <Compile Include="Appointment.cs" />
     <Compile Include="AppointmentList.cs" />
+    <Compile Include="BookAppointment.xaml.cs">
+      <DependentUpon>BookAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayAppointment.xaml.cs">
+      <DependentUpon>DisplayAppointment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Doctor.cs" />
+    <Compile Include="FollowUp.xaml.cs">
+      <DependentUpon>FollowUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HomeScreen.xaml.cs">
+      <DependentUpon>HomeScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InsuranceDetail.cs" />
     <Compile Include="MedicalHistory.cs" />
     <Compile Include="Paitent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="User.cs" />
+    <Page Include="BookAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisplayAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FollowUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomeScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,6 +131,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\cartoon-dentist-tooth-doctor-sit-chair-thumb-up-great-dental-care-concept-69863811.jpg" />
+    <Resource Include="images\download.png" />
+    <Resource Include="images\hqdefault.jpg" />
+    <Resource Include="images\kids-teeth-healthy-770x533.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Teeth.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
