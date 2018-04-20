@@ -62,6 +62,7 @@
     <Compile Include="BookAppointment.xaml.cs">
       <DependentUpon>BookAppointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConvertGridByTime.cs" />
     <Compile Include="DisplayAppointment.xaml.cs">
       <DependentUpon>DisplayAppointment.xaml</DependentUpon>
     </Compile>
