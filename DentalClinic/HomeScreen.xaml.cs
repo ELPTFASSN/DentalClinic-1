@@ -40,5 +40,9 @@ namespace DentalClinic
 
         }
 
+        private void btnDisplayApt_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new DisplayAppointment());
+        }
     }
 }
