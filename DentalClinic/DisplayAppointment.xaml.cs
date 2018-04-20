@@ -77,18 +77,14 @@ namespace DentalClinic
             {
                 DataGridAppointment dg = new DataGridAppointment();
                 dg.Paitent = ap.Paitent.FirstName + " " + ap.Paitent.LastName;
-
                 dg.Doctor = ap.Doctor.FirstName + " " + ap.Doctor.LastName;
                 dg.Date = ap.Date;
                 dg.Time = ap.Time;
                 dg.Problem = ap.Problem;
-
                 dataGrids.Add(dg);
             }
             appointmentGrid.ItemsSource = dataGrids;
-
         }
-
 
     }
 }

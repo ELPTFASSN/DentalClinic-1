@@ -5,14 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DentalClinic"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1000" d:DesignWidth="1000"
       Title="DisplayAppointment">
 
     <Grid Margin="0,0,-258,-201">
-        <DataGrid x:Name="appointmentGrid" HorizontalAlignment="Left" Height="391" Margin="148,176,0,0" VerticalAlignment="Top" Width="730"/>
-        <Label Content="Paitent Name: " HorizontalAlignment="Left" Margin="73,77,0,0" VerticalAlignment="Top" Height="41" Width="97"/>
+        <DataGrid x:Name="appointmentGrid" HorizontalAlignment="Left" Height="391" Margin="73,216,0,0" VerticalAlignment="Top" Width="730"/>
+        <Label Content="Paitent Name: " HorizontalAlignment="Left" Margin="73,77,0,0" VerticalAlignment="Top" Height="27" Width="97"/>
         <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="175,81,0,0"/>
-        <Label Content="Doctor Name:" HorizontalAlignment="Left" Margin="83,123,0,0" VerticalAlignment="Top" Width="87"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="175,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Doctor Name:" HorizontalAlignment="Left" Margin="329,78,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="443,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Page>

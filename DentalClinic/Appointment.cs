@@ -64,5 +64,7 @@ namespace DentalClinic
         public string Time { get => time; set => time = value; }
         public string Date { get => date; set => date = value; }
         public string Problem { get => problem; set => problem = value; }
+
+
     }
 }
