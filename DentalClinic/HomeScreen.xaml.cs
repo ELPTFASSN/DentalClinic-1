@@ -29,5 +29,10 @@ namespace DentalClinic
         {
             this.NavigationService.Navigate(new BookAppointment());
         }
+
+        private void btnDisplayAppointment_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new DisplayAppointment());
+        }
     }
 }
