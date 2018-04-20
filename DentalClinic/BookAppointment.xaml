@@ -5,10 +5,131 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DentalClinic"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" d:DesignWidth="1000"
       Title="BookAppointment">
 
     <Grid>
-        <Label Content="Dental Clinic_BookApt" Width="819" FontFamily="Arial" FontSize="36" Foreground="Black" FontWeight="Bold"/>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Height="66"  Background="#FF73AEDC">
+                <StackPanel Orientation="Vertical" Margin="0 0 0 0">
+                    <Image x:Name="imgLogo" Source="images/Teeth.png" Width="89" Stretch="Fill" Height="67"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="10,20,0,0" Width="857">
+                    <Label x:Name="lblTitle" Content="Dental Care Clinic" FontFamily="Times New Roman" FontSize="24" Foreground="White" 
+                    FontWeight="Bold" VerticalAlignment="Bottom" Height="32" Margin="0,0,19,0"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Height="924">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="images/header.jpg" />
+                </StackPanel.Background>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <Label Name="lblPersonalTitle" Content="Personal Information " Width="348" Foreground="#FFF5F50B" 
+                         FontFamily="Times New Roman" FontSize="22" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <Label Name="lblFName" Content="First Name: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <TextBox Name="txtFName" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <Label Name="lblLName" Content="Last Name: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <TextBox Name="txtLName" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <Label Name="lblPhoneNo" Content="Phone No: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <TextBox Name="txtPhoneNo" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <Label Name="lblEmail" Content="Email Id: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <TextBox Name="txtEmail" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <Label Name="lblOccupation" Content="Occupation: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <TextBox Name="txtOccupation" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <Label Name="lblProblem" Content="Problem: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <TextBox Name="txtProblem" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <Label Name="lblDate" Content="Date: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <TextBox Name="txtDate" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <Label Name="lblTime" Content="Time: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <TextBox Name="txtTime" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                        <Label Name="lblDoctor" Content="Doctor: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <ComboBox Name="cmbDoctor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="30" Loaded="cmbDoctor_Loaded">
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="160 50 10 10">
+                        <Button x:Name="btnSaveApt" Content="Save" Height="48" 
+                         Width="145" Background="#FF73AEDC" FontFamily="Times New Roman" FontSize="20" Foreground="#FF020202" 
+                         VerticalAlignment="Top" FontWeight="Medium" TextOptions.TextHintingMode="Animated" Cursor="Hand"
+                         RenderTransformOrigin="0.5,0.5" Click="btnSaveApt_Click"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="20 10 0 0">
+                        <Label Name="lblMHTitle" Content="Medical History " Width="348" Foreground="#FFF5F50B" 
+                         FontFamily="Times New Roman" FontSize="22" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
+                        <Label Name="lblMAlergies" Content="Mention any allergies: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <Border x:Name="brdTourists" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" 
+                    Height="70" VerticalAlignment="Top" Width="207" >
+                            <TextBlock Name="txtblockAlergy" Margin="-1,0,-1,-1" Background="White"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
+                        <Label Name="lblHeartDieases" Content="Heart Dieases: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <TextBox Name="txtHeartDieases" Width="200"/>
+                    </StackPanel>                    
+                    <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
+                        <Label Name="lblBloodPressure" Content="BloodPressure: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <ComboBox Name="cmbBloodPressure" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="30" Loaded="cmbBloodPressure_Loaded">
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20 10 0 0">
+                        <Label Name="lblInsuranceDetails" Content="Insurance Details" Width="348" Foreground="#FFF5F50B" 
+                         FontFamily="Times New Roman" FontSize="22" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
+                        <Label Name="lblHealthCardNo" Content="Health Card Number: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <TextBox Name="txtHealthCardNo" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
+                        <Label Name="lblHealthCardName" Content="Name on Health Card: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <TextBox Name="txtHealthCardName" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
+                        <Label Name="lblExpiryDate" Content="Expiry Date: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <TextBox Name="txtExpiryDate" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
+                        <Label Name="lblCompany" Content="Company: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+                        <ComboBox Name="cmbCompany" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="30" Loaded="cmbCompany_Loaded">
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="50 50 10 10">
+                        <Button x:Name="btnBack" Content="Back" Height="48" 
+                         Width="145" Background="#FF73AEDC" FontFamily="Times New Roman" FontSize="20" Foreground="#FF020202" 
+                         VerticalAlignment="Top" FontWeight="Medium" TextOptions.TextHintingMode="Animated" Cursor="Hand"
+                         RenderTransformOrigin="0.5,0.5" Click="btnBack_Click"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">                   
+                </StackPanel>
+
+
+            </StackPanel>
+
+
+        </StackPanel>
     </Grid>
 </Page>

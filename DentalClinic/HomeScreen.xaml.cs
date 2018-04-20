@@ -29,5 +29,16 @@ namespace DentalClinic
         {
             this.NavigationService.Navigate(new BookAppointment());
         }
+
+        private void btnFollowUp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

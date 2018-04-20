@@ -38,5 +38,14 @@ namespace DentalClinic
             return appList;
             
         }
+
+        public List<Doctor> docList()
+        {
+            List<Doctor> li = new List<Doctor>();
+            Doctor doctor1 = new Doctor("dfsdsfsd", "dsfdsfds", "343@dfds.com", 324455);
+            Doctor doctor2 = new Doctor("Doctor", "dsfdsfds", "343@dfds.com", 324455);
+            li.Add(doctor1);
+            return li;
+        }
     }
 }
