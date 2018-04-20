@@ -6,8 +6,11 @@
         xmlns:local="clr-namespace:DentalClinic"
         mc:Ignorable="d"
         Title="MainWindow" Height="445.683" Width="839.748">
-    <Grid>
-        <!--<Label Content="Label" Name="Label1" HorizontalAlignment="Left" Margin="189,64,0,0" VerticalAlignment="Top" Height="203" Width="246"/>-->
+
+    <Frame x:Name="frame" />
+
+    <!--<Grid>
+        --><!--<Label Content="Label" Name="Label1" HorizontalAlignment="Left" Margin="189,64,0,0" VerticalAlignment="Top" Height="203" Width="246"/>--><!--
         <StackPanel/>
         <Frame x:Name="MainFrame" Margin="0,30,0,0
                "/>
@@ -20,5 +23,5 @@
 
         </DataGrid>
         <Button x:Name="buttonDisplay" Content="Display" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="75" Click="buttonDisplay_Click"/>
-    </Grid>
+    </Grid>-->
 </Window>

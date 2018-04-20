@@ -25,6 +25,8 @@ namespace DentalClinic
     {
         public MainWindow()
         {
+            Loaded += MainWindow_Loaded;
+
             Program p = new Program();
             AppointmentList li = p.Go();
             try
@@ -86,5 +88,11 @@ namespace DentalClinic
 
             
         }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new HomeScreen());
+        }
+
     }
 }
