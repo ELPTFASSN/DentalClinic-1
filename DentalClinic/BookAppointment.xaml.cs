@@ -143,7 +143,8 @@ namespace DentalClinic
                 errorMessage += "Please enter Problem " + Environment.NewLine;
             }
             DateTime dt;
-            bool valid = DateTime.TryParseExact(txtDate.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dt);
+            bool validDMY = DateTime.TryParseExact(txtDate.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dt);
+            bool validMDY = DateTime.TryParseExact(txtDate.Text, "mm/dd/yyyy", null, System.Globalization.DateTimeStyles.None, out dt);
             if (txtDate.Text.Length == 0)
             {
                 result = false;
@@ -151,20 +152,20 @@ namespace DentalClinic
                 txtDate.BorderThickness = new Thickness(5);
                 errorMessage += "Please enter Date " + Environment.NewLine;
             }
-            else if (valid == false)
+            else if ((validDMY == false) && (validMDY == false))
             {
                 result = false;
                 txtDate.BorderBrush = Brushes.Red;
                 txtDate.BorderThickness = new Thickness(5);
-                errorMessage += "Please enter date in dd/MM/yyyy format " + Environment.NewLine;
+                errorMessage += "Please enter date in dd/MM/yyyy or mm/dd/yyyy format " + Environment.NewLine;
             }
-            else if(!IsGreaterThanCurrDt(txtDate.Text))
-            {
-                result = false;
-                txtDate.BorderBrush = Brushes.Red;
-                txtDate.BorderThickness = new Thickness(5);
-                errorMessage += "Date must be greater than today's date " + Environment.NewLine;
-            }
+            //else if(!IsGreaterThanCurrDt(txtDate.Text))
+            //{
+            //    result = false;
+            //    txtDate.BorderBrush = Brushes.Red;
+            //    txtDate.BorderThickness = new Thickness(5);
+            //    errorMessage += "Date must be greater than today's date " + Environment.NewLine;
+            //}
 
             if (cmbTime.Text.Length == 0)
             {
@@ -217,6 +218,7 @@ namespace DentalClinic
             }
             DateTime dtExpDate;
             bool validExpDate = DateTime.TryParseExact(txtExpiryDate.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dtExpDate);
+            bool validExpDateMDY = DateTime.TryParseExact(txtExpiryDate.Text, "mm/dd/yyyy", null, System.Globalization.DateTimeStyles.None, out dtExpDate);
             if (txtExpiryDate.Text.Length == 0)
             {
                 result = false;
@@ -224,20 +226,20 @@ namespace DentalClinic
                 txtExpiryDate.BorderThickness = new Thickness(5);
                 errorMessage += "Please enter expiry date " + Environment.NewLine;
             }
-            else if (validExpDate == false)
+            else if ((validExpDate == false) && (validExpDateMDY == false))
             {
                 result = false;
                 txtExpiryDate.BorderBrush = Brushes.Red;
                 txtExpiryDate.BorderThickness = new Thickness(5);
-                errorMessage += "Please enter expiry date in dd/MM/yyyy format " + Environment.NewLine;
+                errorMessage += "Please enter expiry date in dd/MM/yyyy or mm/dd/yyyy format " + Environment.NewLine;
             }
-            else if (!IsGreaterThanCurrDt(txtExpiryDate.Text))
-            {
-                result = false;
-                txtExpiryDate.BorderBrush = Brushes.Red;
-                txtExpiryDate.BorderThickness = new Thickness(5);
-                errorMessage += "Expiry date must be greater than today's date " + Environment.NewLine;
-            }
+            //else if (!IsGreaterThanCurrDt(txtExpiryDate.Text))
+            //{
+            //    result = false;
+            //    txtExpiryDate.BorderBrush = Brushes.Red;
+            //    txtExpiryDate.BorderThickness = new Thickness(5);
+            //    errorMessage += "Expiry date must be greater than today's date " + Environment.NewLine;
+            //}
             if (cmbCompany.Text.Length == 0)
             {
                 result = false;
