@@ -294,9 +294,11 @@ namespace DentalClinic
         {
             try
             {
-                DateTime myDate = Convert.ToDateTime(date);
-                DateTime currentDate = DateTime.Now;
-                if(myDate >= currentDate)
+                DateTime myDate = Convert.ToDateTime(date);                
+                string cDate = DateTime.Now.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime currentDate = Convert.ToDateTime(cDate);
+                    //DateTime.Now;
+                if (myDate >= currentDate)
                 {
                     return true;
                 }
