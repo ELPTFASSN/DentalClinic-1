@@ -52,11 +52,11 @@ namespace DentalClinic
     public partial class BookAppointment : Page
     {
         public Doctor selectedDoctor;
-        public AppointmentList appointmentList;
+        
         public BookAppointment()
         {
             InitializeComponent();
-            appointmentList = new AppointmentList();
+            
         }
 
         private Appointment getAppointmentClass()
@@ -64,12 +64,14 @@ namespace DentalClinic
             MedicalHistory medicalHistory = new MedicalHistory(txtblockAlergy.Text, txtHeartDieases.Text, cmbBloodPressure.Text);
             InsuranceDetail insuranceDetail = new InsuranceDetail(txtHealthCardNo.Text, txtHealthCardName.Text, txtExpiryDate.Text, cmbCompany.Text);
             Paitent paitent = new Paitent(txtFName.Text, txtLName.Text, txtEmail.Text, ulong.Parse(txtPhoneNo.Text), txtOccupation.Text, medicalHistory, insuranceDetail);
+            selectedDoctor = (Doctor)cmbDoctor.SelectedItem;
             Appointment appointment = new Appointment(paitent, cmbTime.Text, selectedDoctor, txtDate.Text, txtProblem.Text);
             return appointment;
         }
 
         private void SaveData(Appointment appointment)
         {
+            AppointmentList appointmentList = MainWindow.AppointmentList;
             appointmentList.Add(appointment);
             try
             {
@@ -261,14 +263,14 @@ namespace DentalClinic
         {
             try
             {
-                int result;
+                ulong result;
                 if (phoneNo.Length == 0)
                 {
                     return false;
                 }
                 else
                 {
-                    return int.TryParse(phoneNo, out result);
+                    return ulong.TryParse(phoneNo, out result);
                 }
             }
             catch (Exception ex)

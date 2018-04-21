@@ -14,8 +14,8 @@ namespace DentalClinic
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            string TimePast10 = value.ToString();
-            return TimePast10 == "23:10" ? Brushes.Red : Brushes.White;
+            string TimeLast = value.ToString();
+            return TimeLast == "3:30 PM" ? Brushes.Red : Brushes.White;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

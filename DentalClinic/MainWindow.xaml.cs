@@ -23,11 +23,17 @@ namespace DentalClinic
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static AppointmentList appointmentList;
         public MainWindow()
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
+            AppointmentList = new AppointmentList();
         }
+
+        public static AppointmentList AppointmentList { get => appointmentList;
+
+            set => appointmentList = value; }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {

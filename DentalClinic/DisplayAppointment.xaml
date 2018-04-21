@@ -61,7 +61,7 @@
                             <DataGridTemplateColumn Header="Time" Width="120" IsReadOnly="True">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <!--using Ivalue converter and changing background cell color red if appointment time is more than 10:00PM-->
+                                        <!--changing background cell color to red when appointment time is the last appointment of the day-->
                                         <TextBlock Text="{Binding Time}" Background="{Binding Time, Converter={StaticResource ConvertGridByTime}}"></TextBlock>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
