@@ -30,36 +30,36 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
                         <Label Name="lblFName" Content="First Name: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
-                        <TextBox Name="txtFName" Width="200"/>
+                        <TextBox Name="txtFName" Width="200" TextChanged="txtFName_TextChanged"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
                         <Label Name="lblLName" Content="Last Name: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
-                        <TextBox Name="txtLName" Width="200"/>
+                        <TextBox Name="txtLName" Width="200" TextChanged="txtLName_TextChanged"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
                         <Label Name="lblPhoneNo" Content="Phone No: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
-                        <TextBox Name="txtPhoneNo" Width="200"/>
+                        <TextBox Name="txtPhoneNo" Width="200" TextChanged="txtPhoneNo_TextChanged" BorderThickness="1"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
                         <Label Name="lblEmail" Content="Email Id: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
-                        <TextBox Name="txtEmail" Width="200"/>
+                        <TextBox Name="txtEmail" Width="200" TextChanged="txtEmail_TextChanged"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
                         <Label Name="lblOccupation" Content="Occupation: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
-                        <TextBox Name="txtOccupation" Width="200"/>
+                        <TextBox Name="txtOccupation" Width="200" TextChanged="txtOccupation_TextChanged"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
                         <Label Name="lblProblem" Content="Problem: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
-                        <TextBox Name="txtProblem" Width="200"/>
+                        <TextBox Name="txtProblem" Width="200" TextChanged="txtProblem_TextChanged"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
                         <Label Name="lblDate" Content="Date: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
-                        <TextBox Name="txtDate" Width="200"/>
+                        <TextBox Name="txtDate" Width="200" TextChanged="txtDate_TextChanged"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
                         <Label Name="lblTime" Content="Time: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
                         <!--<TextBox Name="txtTime" Width="200"/>-->
-                        <ComboBox Name="cmbTime" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="30" Loaded="cmbTime_Loaded">
+                        <ComboBox Name="cmbTime" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="30" Loaded="cmbTime_Loaded" StylusUp="cmbTime_StylusUp">
                         </ComboBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
@@ -84,12 +84,12 @@
                         <Label Name="lblMAlergies" Content="Mention any allergies: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
                         <Border x:Name="brdTourists" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" 
                     Height="70" VerticalAlignment="Top" Width="207" >
-                            <TextBlock Name="txtblockAlergy" Margin="-1,0,-1,-1" Background="White"/>
+                            <TextBox Name="txtblockAlergy" Background="White" TextChanged="txtblockAlergy_TextChanged"/>
                         </Border>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
                         <Label Name="lblHeartDieases" Content="Heart Dieases: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
-                        <TextBox Name="txtHeartDieases" Width="200"/>
+                        <TextBox Name="txtHeartDieases" Width="200" TextChanged="txtHeartDieases_TextChanged"/>
                     </StackPanel>                    
                     <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
                         <Label Name="lblBloodPressure" Content="BloodPressure: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
@@ -102,15 +102,15 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
                         <Label Name="lblHealthCardNo" Content="Health Card Number: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
-                        <TextBox Name="txtHealthCardNo" Width="200"/>
+                        <TextBox Name="txtHealthCardNo" Width="200" TextChanged="txtHealthCardNo_TextChanged"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
                         <Label Name="lblHealthCardName" Content="Name on Health Card: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
-                        <TextBox Name="txtHealthCardName" Width="200"/>
+                        <TextBox Name="txtHealthCardName" Width="200" TextChanged="txtHealthCardName_TextChanged"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
                         <Label Name="lblExpiryDate" Content="Expiry Date: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
-                        <TextBox Name="txtExpiryDate" Width="200"/>
+                        <TextBox Name="txtExpiryDate" Width="200" TextChanged="txtExpiryDate_TextChanged"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="40 10 0 0">
                         <Label Name="lblCompany" Content="Company: " Width="200" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>

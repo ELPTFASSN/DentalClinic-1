@@ -33,18 +33,24 @@
                         <Label Name="lblPatientName" Content="Paitent Name: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
                         <TextBox Name="txtPatientName" Width="200"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10 15 10 10" Width="344">
-                        <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical" Margin="10 15 10 10" Width="344">
+                        <StackPanel Orientation="Horizontal" Margin="150,10,10,10">
                             <Button x:Name="btnSearch" Content="Search" Height="48" 
-                         Width="145" Background="#FF73AEDC" FontFamily="Times New Roman" FontSize="20" Foreground="#FF020202" 
+                         Width="185" Background="#FF73AEDC" FontFamily="Times New Roman" FontSize="20" Foreground="#FF020202" 
                          VerticalAlignment="Top" FontWeight="Medium" TextOptions.TextHintingMode="Animated" Cursor="Hand"
                          RenderTransformOrigin="0.5,0.5" Click="btnSearch_Click"/>
                         </StackPanel>
-                        <StackPanel Orientation="Vertical" Margin="55 0">
+                        <StackPanel Orientation="Horizontal" Margin="150,10,10,10">
                             <Button x:Name="btnClearSearch" Content="Clear Search" Height="48" 
-                         Width="145" Background="#FF73AEDC" FontFamily="Times New Roman" FontSize="20" Foreground="#FF020202" 
+                         Width="185" Background="#FF73AEDC" FontFamily="Times New Roman" FontSize="20" Foreground="#FF020202" 
                          VerticalAlignment="Top" FontWeight="Medium" TextOptions.TextHintingMode="Animated" Cursor="Hand"
                          RenderTransformOrigin="0.5,0.5" Click="btnClearSearch_Click"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="150,10,10,10">
+                            <Button x:Name="btnBack" Content="Back" Height="48" 
+                         Width="185" Background="#FF73AEDC" FontFamily="Times New Roman" FontSize="20" Foreground="#FF020202" 
+                         VerticalAlignment="Top" FontWeight="Medium" TextOptions.TextHintingMode="Animated" Cursor="Hand"
+                         RenderTransformOrigin="0.5,0.5" Click="btnBack_Click"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>

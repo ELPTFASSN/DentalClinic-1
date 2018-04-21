@@ -56,8 +56,172 @@ namespace DentalClinic
 
         private void btnSaveApt_Click(object sender, RoutedEventArgs e)
         {
+            bool result = true;
+            if (txtFName.Text.Length == 0)
+            {
+                result = false;
+                txtFName.BorderBrush = Brushes.Red;
+                txtFName.BorderThickness = new Thickness(5);
+            }
+            if (txtLName.Text.Length == 0)
+            {
+                result = false;
+                txtLName.BorderBrush = Brushes.Red;
+                txtLName.BorderThickness = new Thickness(5);
+            }
+            if (txtPhoneNo.Text.Length == 0)
+            {
+                result = false;
+                txtPhoneNo.BorderBrush = Brushes.Red;
+                txtPhoneNo.BorderThickness = new Thickness(5);
+            }
+            if (!CheckPhoneNo(txtPhoneNo.Text))
+            {
+                result = false;
+            }
+            if (txtEmail.Text.Length == 0)
+            {
+                result = false;
+                txtEmail.BorderBrush = Brushes.Red;
+                txtEmail.BorderThickness = new Thickness(5);
+            }
+            if (!IsValidEmail(txtEmail.Text))
+            {
+                result = false;
+            }
+            if (txtOccupation.Text.Length == 0)
+            {
+                result = false;
+                txtOccupation.BorderBrush = Brushes.Red;
+                txtOccupation.BorderThickness = new Thickness(5);
+            }
+            if (txtProblem.Text.Length == 0)
+            {
+                result = false;
+                txtProblem.BorderBrush = Brushes.Red;
+                txtProblem.BorderThickness = new Thickness(5);
+            }
+            if (txtDate.Text.Length == 0)
+            {
+                result = false;
+                txtDate.BorderBrush = Brushes.Red;
+                txtDate.BorderThickness = new Thickness(5);
+            }
+            //DateTime dDate;
+            //dDate = DateTime.Parse(txtDate.Text);
+            //String.Format("{0:d/MM/yyyy}", dDate);
 
+            DateTime dt;
+            bool valid = DateTime.TryParseExact(txtDate.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dt);
+            if (valid == false)
+            {
+                result = false;
+                txtDate.BorderBrush = Brushes.Red;
+                txtDate.BorderThickness = new Thickness(5);
+            }
+
+            if (cmbTime.Text.Length == 0)
+            {
+                result = false;
+                cmbTime.BorderBrush = Brushes.Red;
+                cmbTime.BorderThickness = new Thickness(5);
+            }
+            if (cmbDoctor.Text.Length == 0)
+            {
+                result = false;
+                cmbDoctor.BorderBrush = Brushes.Red;
+                cmbDoctor.BorderThickness = new Thickness(5);
+            }
+            if (txtblockAlergy.Text.Length == 0)
+            {
+                result = false;
+                txtblockAlergy.BorderBrush = Brushes.Red;
+                txtblockAlergy.BorderThickness = new Thickness(5);
+            }
+            if (txtHeartDieases.Text.Length == 0)
+            {
+                result = false;
+                txtHeartDieases.BorderBrush = Brushes.Red;
+                txtHeartDieases.BorderThickness = new Thickness(5);
+            }
+            if (cmbBloodPressure.Text.Length == 0)
+            {
+                result = false;
+                cmbBloodPressure.BorderBrush = Brushes.Red;
+                cmbBloodPressure.BorderThickness = new Thickness(5);
+            }
+            if (txtHealthCardNo.Text.Length == 0)
+            {
+                result = false;
+                txtHealthCardNo.BorderBrush = Brushes.Red;
+                txtHealthCardNo.BorderThickness = new Thickness(5);
+            }
+            if (txtHealthCardName.Text.Length == 0)
+            {
+                result = false;
+                txtHealthCardName.BorderBrush = Brushes.Red;
+                txtHealthCardName.BorderThickness = new Thickness(5);
+            }
+            if (txtExpiryDate.Text.Length == 0)
+            {
+                result = false;
+                txtExpiryDate.BorderBrush = Brushes.Red;
+                txtExpiryDate.BorderThickness = new Thickness(5);
+            }
+            DateTime dtExpDate;
+            bool validExpDate = DateTime.TryParseExact(txtExpiryDate.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dtExpDate);
+            if (validExpDate == false)
+            {
+                result = false;
+                txtExpiryDate.BorderBrush = Brushes.Red;
+                txtExpiryDate.BorderThickness = new Thickness(5);
+            }
+            if (cmbCompany.Text.Length == 0)
+            {
+                result = false;
+                cmbCompany.BorderBrush = Brushes.Red;
+                cmbCompany.BorderThickness = new Thickness(5);
+            }
+            if (result)
+            {
+            }
         }
+
+        private bool CheckPhoneNo(string phoneNo)
+        {
+            try
+            {
+                int result;
+                if (phoneNo.Length == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return int.TryParse(phoneNo, out result);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -145,5 +309,82 @@ namespace DentalClinic
             comboBoxTime.SelectedIndex = 0;
         }
 
+        private void txtPhoneNo_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tbPhoneNo = (TextBox)sender;
+            tbPhoneNo.Foreground = Brushes.Black;
+        }
+
+        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tbEmail = (TextBox)sender;
+            tbEmail.Foreground = Brushes.Black;
+        }
+
+        private void txtFName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txtFName.BorderBrush = Brushes.Black;
+            txtFName.BorderThickness = new Thickness(1);
+        }
+
+        private void txtLName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txtLName.BorderBrush = Brushes.Black;
+            txtLName.BorderThickness = new Thickness(1);
+        }
+
+        private void txtOccupation_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txtOccupation.BorderBrush = Brushes.Black;
+            txtOccupation.BorderThickness = new Thickness(1);
+        }
+
+        private void txtProblem_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txtProblem.BorderBrush = Brushes.Black;
+            txtProblem.BorderThickness = new Thickness(1);
+        }
+
+        private void txtDate_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txtDate.BorderBrush = Brushes.Black;
+            txtDate.BorderThickness = new Thickness(1);
+        }
+
+        private void cmbTime_StylusUp(object sender, StylusEventArgs e)
+        {
+            //txtDate.BorderBrush = Brushes.Black;
+            //txtDate.BorderThickness = new Thickness(1);
+        }
+
+        private void txtblockAlergy_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txtblockAlergy.BorderBrush = Brushes.Black;
+            txtblockAlergy.BorderThickness = new Thickness(1);
+        }
+
+        private void txtHeartDieases_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txtHeartDieases.BorderBrush = Brushes.Black;
+            txtHeartDieases.BorderThickness = new Thickness(1);
+        }
+
+        private void txtHealthCardNo_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txtHealthCardNo.BorderBrush = Brushes.Black;
+            txtHealthCardNo.BorderThickness = new Thickness(1);
+        }
+
+        private void txtHealthCardName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txtHealthCardName.BorderBrush = Brushes.Black;
+            txtHealthCardName.BorderThickness = new Thickness(1);
+        }
+
+        private void txtExpiryDate_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txtExpiryDate.BorderBrush = Brushes.Black;
+            txtExpiryDate.BorderThickness = new Thickness(1);
+        }
     }
 }

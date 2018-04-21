@@ -95,5 +95,10 @@ namespace DentalClinic
         {
 
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new HomeScreen());
+        }
     }
 }
