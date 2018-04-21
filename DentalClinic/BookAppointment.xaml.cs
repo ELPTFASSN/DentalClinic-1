@@ -57,37 +57,44 @@ namespace DentalClinic
         private void btnSaveApt_Click(object sender, RoutedEventArgs e)
         {
             bool result = true;
+            string errorMessage = string.Empty;
             if (txtFName.Text.Length == 0)
             {
                 result = false;
                 txtFName.BorderBrush = Brushes.Red;
                 txtFName.BorderThickness = new Thickness(5);
+                errorMessage = "Please enter First Name " + Environment.NewLine;
             }
             if (txtLName.Text.Length == 0)
             {
                 result = false;
                 txtLName.BorderBrush = Brushes.Red;
                 txtLName.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter Last Name " + Environment.NewLine;
             }
             if (txtPhoneNo.Text.Length == 0)
             {
                 result = false;
                 txtPhoneNo.BorderBrush = Brushes.Red;
                 txtPhoneNo.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter Phone number " + Environment.NewLine;
             }
             if (!CheckPhoneNo(txtPhoneNo.Text))
             {
                 result = false;
+                errorMessage += "Phone umber is not valid " + Environment.NewLine;
             }
             if (txtEmail.Text.Length == 0)
             {
                 result = false;
                 txtEmail.BorderBrush = Brushes.Red;
                 txtEmail.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter EmailId " + Environment.NewLine;
             }
             if (!IsValidEmail(txtEmail.Text))
             {
                 result = false;
+                errorMessage += "EmailId is not valid " + Environment.NewLine;
             }
             if (txtOccupation.Text.Length == 0)
             {
@@ -114,6 +121,12 @@ namespace DentalClinic
             DateTime dt;
             bool valid = DateTime.TryParseExact(txtDate.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dt);
             if (valid == false)
+            {
+                result = false;
+                txtDate.BorderBrush = Brushes.Red;
+                txtDate.BorderThickness = new Thickness(5);
+            }
+            if(!IsGreaterThanCurrDt(txtDate.Text))
             {
                 result = false;
                 txtDate.BorderBrush = Brushes.Red;
@@ -176,6 +189,12 @@ namespace DentalClinic
                 txtExpiryDate.BorderBrush = Brushes.Red;
                 txtExpiryDate.BorderThickness = new Thickness(5);
             }
+            if (!IsGreaterThanCurrDt(txtExpiryDate.Text))
+            {
+                result = false;
+                txtExpiryDate.BorderBrush = Brushes.Red;
+                txtExpiryDate.BorderThickness = new Thickness(5);
+            }
             if (cmbCompany.Text.Length == 0)
             {
                 result = false;
@@ -184,6 +203,10 @@ namespace DentalClinic
             }
             if (result)
             {
+            }
+            else
+            {
+                MessageBox.Show(errorMessage);
             }
         }
 
@@ -222,6 +245,27 @@ namespace DentalClinic
             }
         }
 
+        private bool IsGreaterThanCurrDt(string date)
+        {
+            try
+            {
+                DateTime myDate = Convert.ToDateTime(date);
+                DateTime currentDate = DateTime.Now;
+                if(myDate >= currentDate)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
