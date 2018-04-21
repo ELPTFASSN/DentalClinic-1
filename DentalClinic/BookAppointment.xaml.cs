@@ -79,10 +79,10 @@ namespace DentalClinic
                 txtPhoneNo.BorderThickness = new Thickness(5);
                 errorMessage += "Please enter Phone number " + Environment.NewLine;
             }
-            if (!CheckPhoneNo(txtPhoneNo.Text))
+            else if (!CheckPhoneNo(txtPhoneNo.Text))
             {
                 result = false;
-                errorMessage += "Phone umber is not valid " + Environment.NewLine;
+                errorMessage += "Phone number is not valid " + Environment.NewLine;
             }
             if (txtEmail.Text.Length == 0)
             {
@@ -91,7 +91,7 @@ namespace DentalClinic
                 txtEmail.BorderThickness = new Thickness(5);
                 errorMessage += "Please enter EmailId " + Environment.NewLine;
             }
-            if (!IsValidEmail(txtEmail.Text))
+            else if (!IsValidEmail(txtEmail.Text))
             {
                 result = false;
                 errorMessage += "EmailId is not valid " + Environment.NewLine;
@@ -101,36 +101,37 @@ namespace DentalClinic
                 result = false;
                 txtOccupation.BorderBrush = Brushes.Red;
                 txtOccupation.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter Occupation " + Environment.NewLine;
             }
             if (txtProblem.Text.Length == 0)
             {
                 result = false;
                 txtProblem.BorderBrush = Brushes.Red;
                 txtProblem.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter Problem " + Environment.NewLine;
             }
+            DateTime dt;
+            bool valid = DateTime.TryParseExact(txtDate.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dt);
             if (txtDate.Text.Length == 0)
             {
                 result = false;
                 txtDate.BorderBrush = Brushes.Red;
                 txtDate.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter Date " + Environment.NewLine;
             }
-            //DateTime dDate;
-            //dDate = DateTime.Parse(txtDate.Text);
-            //String.Format("{0:d/MM/yyyy}", dDate);
-
-            DateTime dt;
-            bool valid = DateTime.TryParseExact(txtDate.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dt);
-            if (valid == false)
+            else if (valid == false)
             {
                 result = false;
                 txtDate.BorderBrush = Brushes.Red;
                 txtDate.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter date in dd/MM/yyyy format " + Environment.NewLine;
             }
-            if(!IsGreaterThanCurrDt(txtDate.Text))
+            else if(!IsGreaterThanCurrDt(txtDate.Text))
             {
                 result = false;
                 txtDate.BorderBrush = Brushes.Red;
                 txtDate.BorderThickness = new Thickness(5);
+                errorMessage += "Date must be greater than today's date " + Environment.NewLine;
             }
 
             if (cmbTime.Text.Length == 0)
@@ -138,68 +139,79 @@ namespace DentalClinic
                 result = false;
                 cmbTime.BorderBrush = Brushes.Red;
                 cmbTime.BorderThickness = new Thickness(5);
+                errorMessage += "Please select time " + Environment.NewLine;
             }
             if (cmbDoctor.Text.Length == 0)
             {
                 result = false;
                 cmbDoctor.BorderBrush = Brushes.Red;
                 cmbDoctor.BorderThickness = new Thickness(5);
+                errorMessage += "Please select doctor " + Environment.NewLine;
             }
             if (txtblockAlergy.Text.Length == 0)
             {
                 result = false;
                 txtblockAlergy.BorderBrush = Brushes.Red;
                 txtblockAlergy.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter alergy " + Environment.NewLine;
             }
             if (txtHeartDieases.Text.Length == 0)
             {
                 result = false;
                 txtHeartDieases.BorderBrush = Brushes.Red;
                 txtHeartDieases.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter heart dieases " + Environment.NewLine;
             }
             if (cmbBloodPressure.Text.Length == 0)
             {
                 result = false;
                 cmbBloodPressure.BorderBrush = Brushes.Red;
                 cmbBloodPressure.BorderThickness = new Thickness(5);
+                errorMessage += "Please select blood pressure " + Environment.NewLine;
             }
             if (txtHealthCardNo.Text.Length == 0)
             {
                 result = false;
                 txtHealthCardNo.BorderBrush = Brushes.Red;
                 txtHealthCardNo.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter health card no " + Environment.NewLine;
             }
             if (txtHealthCardName.Text.Length == 0)
             {
                 result = false;
                 txtHealthCardName.BorderBrush = Brushes.Red;
                 txtHealthCardName.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter health card name " + Environment.NewLine;
             }
+            DateTime dtExpDate;
+            bool validExpDate = DateTime.TryParseExact(txtExpiryDate.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dtExpDate);
             if (txtExpiryDate.Text.Length == 0)
             {
                 result = false;
                 txtExpiryDate.BorderBrush = Brushes.Red;
                 txtExpiryDate.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter expiry date " + Environment.NewLine;
             }
-            DateTime dtExpDate;
-            bool validExpDate = DateTime.TryParseExact(txtExpiryDate.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dtExpDate);
-            if (validExpDate == false)
+            else if (validExpDate == false)
             {
                 result = false;
                 txtExpiryDate.BorderBrush = Brushes.Red;
                 txtExpiryDate.BorderThickness = new Thickness(5);
+                errorMessage += "Please enter expiry date in dd/MM/yyyy format " + Environment.NewLine;
             }
-            if (!IsGreaterThanCurrDt(txtExpiryDate.Text))
+            else if (!IsGreaterThanCurrDt(txtExpiryDate.Text))
             {
                 result = false;
                 txtExpiryDate.BorderBrush = Brushes.Red;
                 txtExpiryDate.BorderThickness = new Thickness(5);
+                errorMessage += "Expiry date must be greater than today's date " + Environment.NewLine;
             }
             if (cmbCompany.Text.Length == 0)
             {
                 result = false;
                 cmbCompany.BorderBrush = Brushes.Red;
                 cmbCompany.BorderThickness = new Thickness(5);
+                errorMessage += "Please select company " + Environment.NewLine;
             }
             if (result)
             {
@@ -355,14 +367,18 @@ namespace DentalClinic
 
         private void txtPhoneNo_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox tbPhoneNo = (TextBox)sender;
-            tbPhoneNo.Foreground = Brushes.Black;
+            //TextBox tbPhoneNo = (TextBox)sender;
+            //tbPhoneNo.Foreground = Brushes.Black;
+            txtPhoneNo.BorderBrush = Brushes.Black;
+            txtPhoneNo.BorderThickness = new Thickness(1);
         }
 
         private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox tbEmail = (TextBox)sender;
-            tbEmail.Foreground = Brushes.Black;
+            //TextBox tbEmail = (TextBox)sender;
+            //tbEmail.Foreground = Brushes.Black;
+            txtEmail.BorderBrush = Brushes.Black;
+            txtEmail.BorderThickness = new Thickness(1);
         }
 
         private void txtFName_TextChanged(object sender, TextChangedEventArgs e)
