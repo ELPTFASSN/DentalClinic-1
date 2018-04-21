@@ -86,5 +86,14 @@ namespace DentalClinic
             appointmentGrid.ItemsSource = dataGrids;
         }
 
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnClearSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

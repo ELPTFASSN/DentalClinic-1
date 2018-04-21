@@ -44,5 +44,11 @@ namespace DentalClinic
         {
             this.NavigationService.Navigate(new DisplayAppointment());
         }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+
     }
 }
