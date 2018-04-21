@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace DentalClinic
 {
@@ -49,9 +51,39 @@ namespace DentalClinic
     /// </summary>
     public partial class BookAppointment : Page
     {
+        public Doctor selectedDoctor;
+        public AppointmentList appointmentList;
         public BookAppointment()
         {
             InitializeComponent();
+            appointmentList = new AppointmentList();
+        }
+
+        private Appointment getAppointmentClass()
+        {
+            MedicalHistory medicalHistory = new MedicalHistory(txtblockAlergy.Text, txtHeartDieases.Text, cmbBloodPressure.Text);
+            InsuranceDetail insuranceDetail = new InsuranceDetail(txtHealthCardNo.Text, txtHealthCardName.Text, txtExpiryDate.Text, cmbCompany.Text);
+            Paitent paitent = new Paitent(txtFName.Text, txtLName.Text, txtEmail.Text, ulong.Parse(txtPhoneNo.Text), txtOccupation.Text, medicalHistory, insuranceDetail);
+            Appointment appointment = new Appointment(paitent, cmbTime.Text, selectedDoctor, txtDate.Text, txtProblem.Text);
+            return appointment;
+        }
+
+        private void SaveData(Appointment appointment)
+        {
+            appointmentList.Add(appointment);
+            try
+            {
+                //XML serialization,converting c# object to XML and saving it in a file
+                XmlSerializer serializer = new XmlSerializer(typeof(AppointmentList));
+                TextWriter writer = new StreamWriter("Appointments.xml");
+                serializer.Serialize(writer, appointmentList);
+                writer.Close();
+                MessageBox.Show("Data saved successfully");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error in writing to XML file");
+            }
         }
 
         private void btnSaveApt_Click(object sender, RoutedEventArgs e)
@@ -215,6 +247,7 @@ namespace DentalClinic
             }
             if (result)
             {
+                SaveData(getAppointmentClass());
             }
             else
             {

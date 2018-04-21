@@ -11,7 +11,7 @@ namespace DentalClinic
         string firstName;
         string lastName;
         string emailAddress;
-        uint phoneNumber;
+        ulong phoneNumber;
 
         public Doctor()
         {
@@ -21,7 +21,7 @@ namespace DentalClinic
             this.phoneNumber = 0;
         }
 
-        public Doctor(string firstName, string lastName, string emailAddress, uint phoneNumber)
+        public Doctor(string firstName, string lastName, string emailAddress, ulong phoneNumber)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -32,11 +32,11 @@ namespace DentalClinic
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
         public string EmailAddress { get => emailAddress; set => emailAddress = value; }
-        public uint PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        public ulong PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
 
         public override string ToString()
         {
-            return "Doctor: " + this.FirstName + " " + this.LastName;
+            return "Dr. " + this.FirstName + " " + this.LastName;
         }
     }
 }

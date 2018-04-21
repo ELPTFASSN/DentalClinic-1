@@ -7,7 +7,6 @@
         WindowState="Maximized" 
         mc:Ignorable="d"
         Title="MainWindow" Height="445.683" Width="839.748">
-
     <Frame x:Name="frame" />
 
     <!--<Grid>

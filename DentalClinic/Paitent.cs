@@ -14,7 +14,7 @@ namespace DentalClinic
         string firstName;
         string lastName;
         string emailAddress;
-        uint phoneNumber;
+        ulong phoneNumber;
         string occupation;
         MedicalHistory medicalHistory;
         InsuranceDetail insuranceDetail;
@@ -30,7 +30,7 @@ namespace DentalClinic
             insuranceDetail = new InsuranceDetail();
         }
 
-        public Paitent(string firstName, string lastName, string emailAddress, uint phoneNumber, string occupation, MedicalHistory medicalHistory, InsuranceDetail insuranceDetail)
+        public Paitent(string firstName, string lastName, string emailAddress, ulong phoneNumber, string occupation, MedicalHistory medicalHistory, InsuranceDetail insuranceDetail)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -44,7 +44,7 @@ namespace DentalClinic
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
         public string EmailAddress { get => emailAddress; set => emailAddress = value; }
-        public uint PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        public ulong PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string Occupation { get => occupation; set => occupation = value; }
         public MedicalHistory MedicalHistory { get => medicalHistory; set => medicalHistory = value; }
         public InsuranceDetail InsuranceDetail { get => insuranceDetail; set => insuranceDetail = value; }

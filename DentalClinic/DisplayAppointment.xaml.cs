@@ -26,21 +26,7 @@ namespace DentalClinic
         public List<DataGridAppointment> dataGrids;
         public DisplayAppointment()
         {
-            InitializeComponent();       
-            Program p = new Program();
-            AppointmentList li = p.Go();
-            try
-            {
-                //XML serialization,converting c# object to XML and saving it in a file
-                XmlSerializer serializer = new XmlSerializer(typeof(AppointmentList));
-                TextWriter writer = new StreamWriter("Appointments.xml");
-                serializer.Serialize(writer, li);
-                writer.Close();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error in writing to XML file");
-            }
+            InitializeComponent();
             Display();
         }
 
@@ -50,29 +36,23 @@ namespace DentalClinic
             //XML Deserialization,reading the xml file saved on disk and putting it in c# object which is later set to datagrid
             try
             {
-
-
                 using (var reader = XmlReader.Create(@"Appointments.xml"))
                 {
                     XmlSerializer deserializer = new XmlSerializer(typeof(AppointmentList));
                     appList = (AppointmentList)deserializer.Deserialize(reader);
                 }
-
             }
             catch (Exception e)
             {
                 MessageBox.Show("Error in reading file");
             }
-
             return appList;
-
         }
 
         private void Display()
         {
-            dataGrids = new List<DataGridAppointment>();
             AppointmentList li = ReadXML();
-
+            dataGrids = new List<DataGridAppointment>();
             foreach (Appointment ap in li)
             {
                 DataGridAppointment dg = new DataGridAppointment();
@@ -88,12 +68,16 @@ namespace DentalClinic
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-
+            string name = txtPatientName.Text;
+            var query = dataGrids.Where<DataGridAppointment>
+                    (ap => (ap.Paitent.Contains(name)));
+            appointmentGrid.ItemsSource = query;
         }
 
         private void btnClearSearch_Click(object sender, RoutedEventArgs e)
         {
-
+            Display();
+            txtPatientName.Text = "";
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

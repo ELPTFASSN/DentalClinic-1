@@ -10,9 +10,9 @@ namespace DentalClinic
     {
         string allergies;
         string heartDisease;
-        bool bloodPressure;
+        string bloodPressure;
 
-        public MedicalHistory(string allergies, string heartDisease, bool bloodPressure)
+        public MedicalHistory(string allergies, string heartDisease, string bloodPressure)
         {
             this.allergies = allergies;
             this.heartDisease = heartDisease;
@@ -23,12 +23,12 @@ namespace DentalClinic
         {
             this.allergies = null;
             this.heartDisease = null;
-            this.bloodPressure = false;
+            this.bloodPressure = null;
         }
 
         public string Allergies { get => allergies; set => allergies = value; }
         public string HeartDisease { get => heartDisease; set => heartDisease = value; }
-        public bool BloodPressure { get => bloodPressure; set => bloodPressure = value; }
+        public string BloodPressure { get => bloodPressure; set => bloodPressure = value; }
 
         public override string ToString()
         {

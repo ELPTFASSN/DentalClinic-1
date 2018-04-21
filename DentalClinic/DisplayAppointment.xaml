@@ -7,12 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="1000" d:DesignWidth="1000"
       Title="DisplayAppointment">
-
     <Page.Resources>
         <local:DataGridAppointment x:Key="key" />
         <local:ConvertGridByTime x:Key="ConvertGridByTime"/>
     </Page.Resources>
-
     <Grid>
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Height="66"  Background="#FF73AEDC">
@@ -55,8 +53,7 @@
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="10 10">
-                    
-                    <DataGrid x:Name="appointmentGrid" HorizontalAlignment="Left" Height="391" VerticalAlignment="Top" Width="604">
+                    <DataGrid x:Name="appointmentGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="391" VerticalAlignment="Top" Width="604">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Paitent Name" Binding="{Binding Paitent,Mode=OneWay}" Width="120"/>
                             <DataGridTextColumn Header="Doctor Name" Binding="{Binding Doctor,Mode=OneWay}" Width="120"/>
@@ -72,7 +69,7 @@
                             <DataGridTextColumn Header="Problem" Binding="{Binding Problem,Mode=OneWay}" Width="120"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    
+
                 </StackPanel>
             </StackPanel>
         </StackPanel>

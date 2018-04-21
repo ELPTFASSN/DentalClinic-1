@@ -11,6 +11,6 @@ namespace DentalClinic
         string FirstName { get; set; }
         string LastName { get; set; }
         string EmailAddress { get; set; }
-        UInt32 PhoneNumber { get; set; }
+        ulong PhoneNumber { get; set; }
     }
 }

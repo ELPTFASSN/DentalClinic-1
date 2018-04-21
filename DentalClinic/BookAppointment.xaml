@@ -64,7 +64,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
                         <Label Name="lblDoctor" Content="Doctor: " Width="150" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
-                        <ComboBox Name="cmbDoctor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="30" Loaded="cmbDoctor_Loaded">
+                        <ComboBox Name="cmbDoctor" SelectedItem="{Binding selectedDoctor}"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="30" Loaded="cmbDoctor_Loaded">
                         </ComboBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="160 50 10 10">
